@@ -14,7 +14,7 @@
     <ul>
         <%for(let list of allListing){%>
             <li class="listing-item">
-                <a href="/listings/<%=list._id%>"><%= list.title%></a>
+                <a href="/listings/<%=list._id%>"><%= list.title%></a><br>
                 <img class="listing-image" src="<%=list.image%>" alt="<%=list.title%>">
             </li>
         <%}%>

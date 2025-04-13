@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fake AirBNB</title>
+</head>
+<body>
+    <h1>edit here</h1>
+    <form method="POST" action="/listings/<%=listing._id%>?_method=PUT">
+    Title: <input name="listing[title]" type="text" value="<%=listing.title%>"><br><br>
+    Image URL: <input name="listing[image]" type="text" value="<%=listing.image%>"><br><br>
+    <textarea name="listing[description]"><%=listing.description%></textarea><br><br>
+    Price: <input name="listing[price]" type="text" value="<%= listing.price %>"><br><br>
+    Location: <input name="listing[location]" type="text" value="<%=listing.location%>"><br><br>
+    Country: <input name="listing[country]" type="text" value="<%=listing.country%>"><br><br>
+<button>Edit</button>
+</form>
+</body>
+</html>
