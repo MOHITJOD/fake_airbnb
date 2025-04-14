@@ -1,18 +1,15 @@
 body{
- font-family: 'Courier New', Courier, monospace;
-    background-color: aqua;
+    font-family: "Plus Jakarta Sans", sans-serif !important;
 }
 
-img{
-    border-radius: 10px;
-}
+
 
 a{    
-    text-decoration: none;
+    text-decoration: none !important; 
 }
 
 .navbar-brand{
-    font-size: 3rem !important;
+    font-size: 2rem !important;
     color: rgb(163, 40, 40) !important;
 }
 
@@ -26,11 +23,64 @@ li{
 }
 
 nav{
-    height: 5rem;
     background-color: white ;
 }
 
 nav a{
     font-weight: 600 !important ;
     color: #222222 !important ; 
+}
+
+.finfo{
+    height: 6rem;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.flinks{
+    width: 100%;
+}
+
+.flinks a{
+    
+    color: #222222 !important;
+}
+
+.flinks a:hover{
+    text-decoration: underline !important;
+}
+
+.fbrand{
+    width: 100%;
+    font-weight: 600;
+}
+
+
+.card-img-top{
+    width: 100% !important;
+   object-fit: cover !important;
+    /* height: 100%; */
+    border-radius: 1.5rem !important;
+}
+
+.card{
+    border: none !important;
+    margin-bottom: 3rem;
+}
+
+.card-img-overlay{
+    opacity: 0;
+}
+
+.card-img-overlay:hover{
+       background-color: rgb(246, 247, 244);
+       opacity: .2;
+}
+
+img{
+    border-radius: 1.5rem;
+    height: 20rem;
+      object-fit: cover;
 }
