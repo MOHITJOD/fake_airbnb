@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detailed Property</title>
-</head>
+<% layout("/layouts/boilerPlate")%>
 <body>
     <h1><%=listing.title%></h1>
     <img src="<%=listing.image%>" alt="image">
@@ -12,7 +6,8 @@
     <h2> &#8377;<%= listing.price.toLocaleString("en-IN") %></h2>
     <h2><%= listing.location%></h2>
     <h2><%= listing.country%></h2>
-    <a href="/listings/<%=listing._id%>/edit">edit</a>
-
+    <a href="/listings/<%=listing._id%>/edit">edit</a><br><br>
+<form method="post" action="/listings/<%=listing._id%>?_method=DELETE">
+    <button>Delete</button>
+</form>
 </body>
-</html>

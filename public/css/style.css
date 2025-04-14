@@ -1,0 +1,36 @@
+body{
+ font-family: 'Courier New', Courier, monospace;
+    background-color: aqua;
+}
+
+img{
+    border-radius: 10px;
+}
+
+a{    
+    text-decoration: none;
+}
+
+.navbar-brand{
+    font-size: 3rem !important;
+    color: rgb(163, 40, 40) !important;
+}
+
+li{
+    list-style-type: none;
+}
+
+.fa-brands{
+    color: brown; 
+    font-size: 4rem;
+}
+
+nav{
+    height: 5rem;
+    background-color: white ;
+}
+
+nav a{
+    font-weight: 600 !important ;
+    color: #222222 !important ; 
+}
