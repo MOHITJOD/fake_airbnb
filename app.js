@@ -1,10 +1,13 @@
+require("dotenv").config();
 const express = require("express");
 const app = express();
-const mongoose= require("mongoose");
+const mongoose = require("mongoose");
 const path = require("path");
 const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
 
+const port = process.env.PORT || 3000;
+const dbUrl = process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/airbnb";
 
 app.use(express.urlencoded({ extended : true }));
 app.use(methodOverride("_method"));
@@ -14,22 +17,33 @@ app.engine("ejs", ejsMate);
 app.use(express.static(path.join(__dirname, "/public")))
 const Listing = require("./models/listing.js");
 
-app.listen(3000,() =>{
-    console.log("3000 listning!");
-});
-
-
 main().then(()=>{
-    console.log("connected!")
+    console.log("connected to database!")
 }).catch((err)=>{
-    console.log(err)
+    console.log("MongoDB Connection Error:");
+    console.log(err);
 })
+
 async function main() {
-    await mongoose.connect("mongodb://127.0.0.1:27017/airbnb");
+    try {
+        await mongoose.connect(dbUrl, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true
+        });
+        console.log("MongoDB URL being used:", dbUrl);
+    } catch (err) {
+        console.log("Error in mongoose.connect:");
+        console.log(err);
+        throw err;
+    }
 }
 
+app.listen(port,() =>{
+    console.log(`Server is running on port ${port}`);
+});
+
 app.get("/",(req,res)=>{
-    res.send("hehe working!")
+    res.render("listings/home.ejs");
 })
 
 //index route
